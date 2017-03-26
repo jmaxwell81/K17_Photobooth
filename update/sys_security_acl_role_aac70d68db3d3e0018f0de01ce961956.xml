@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_security_acl_role">
+    <sys_security_acl_role action="INSERT_OR_UPDATE">
+        <sys_class_name>sys_security_acl_role</sys_class_name>
+        <sys_created_by>jc</sys_created_by>
+        <sys_created_on>2017-03-26 00:23:11</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_id>aac70d68db3d3e0018f0de01ce961956</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_snc_k17_photo_share.x_snc_k17.user</sys_name>
+        <sys_package display_value="K17" source="x_snc_k17">de9b26b6db783e00d1befa56bf9619c2</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="K17">de9b26b6db783e00d1befa56bf9619c2</sys_scope>
+        <sys_security_acl display_value="x_snc_k17_photo_share">2ac70d68db3d3e0018f0de01ce96193a</sys_security_acl>
+        <sys_update_name>sys_security_acl_role_aac70d68db3d3e0018f0de01ce961956</sys_update_name>
+        <sys_updated_by>jc</sys_updated_by>
+        <sys_updated_on>2017-03-26 00:23:11</sys_updated_on>
+        <sys_user_role display_value="x_snc_k17.user" name="x_snc_k17.user">629be6b6db783e00d1befa56bf961952</sys_user_role>
+        <transaction_id/>
+    </sys_security_acl_role>
+</record_update>

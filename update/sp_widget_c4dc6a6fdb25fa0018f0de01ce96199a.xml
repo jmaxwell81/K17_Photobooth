@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <client_script><![CDATA[function($scope, $interval) {
+  $scope.loading = false;
+	
+	var c = this;
+	
+	$interval(function(){
+		$scope.loading = true;
+		c.server.update().then(function(){
+			$scope.loading = false;
+		});
+	}, 120000);
+	
+}]]></client_script>
+        <controller_as>c</controller_as>
+        <css>#gallery-container {
+  text-align: center;
+  margin: auto;
+}
+
+#hideAll {
+  position: fixed;
+  left: 0px; 
+  right: 0px; 
+  top: 0px; 
+  bottom: 0px; 
+  background: rgb(129, 129, 129);
+  z-index: 99; /* Higher than anything else in the document */
+}
+
+#loading-text {
+  top: 50%;
+  position: absolute;
+  left: 50%;
+  text-align: center;
+}
+
+
+.photo-box {
+  width: 360px;
+  /*height: 300px;*/
+  background: rgba(255, 255, 255, 0.3);
+  margin: 10px;
+  display: inline-block;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.photo-box &gt; img {
+  vertical-align: top !important; 
+}
+
+.photo-small {
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.caption {
+ text-align: center;
+  width: 100%;
+  color: #fff;
+  font-size: 16px;
+}
+
+.center {
+  margin: auto;  
+}
+
+
+.loader {
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+#hideAll.ng-enter {
+  transition:0.5s linear all;
+  opacity:0;
+}
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>wof-gallery</id>
+        <internal>false</internal>
+        <link/>
+        <name>K17 - Wall of Fame - Gallery</name>
+        <option_schema>[{"name":"number_of_photos","default_value":"12","label":"Number of photos to fetch","type":"integer"}]</option_schema>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+	options.number_of_photos = options.number_of_photos || 12;
+
+	data.gallery = new x_snc_k17.K17WallOfFame().gallery(options.number_of_photos);
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>jc</sys_created_by>
+        <sys_created_on>2017-03-23 05:10:38</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_id>c4dc6a6fdb25fa0018f0de01ce96199a</sys_id>
+        <sys_mod_count>66</sys_mod_count>
+        <sys_name>K17 - Wall of Fame - Gallery</sys_name>
+        <sys_package display_value="K17" source="x_snc_k17">de9b26b6db783e00d1befa56bf9619c2</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="K17">de9b26b6db783e00d1befa56bf9619c2</sys_scope>
+        <sys_update_name>sp_widget_c4dc6a6fdb25fa0018f0de01ce96199a</sys_update_name>
+        <sys_updated_by>jc</sys_updated_by>
+        <sys_updated_on>2017-03-26 01:06:29</sys_updated_on>
+        <template><![CDATA[<div ng-show="loading" id="hideAll">
+  <div id="loading-text">
+    <div>
+      Fetching more photos
+    </div>
+    <!--
+    <div>
+      <span class="glyphicon glyphicon-repeat loader" aria-hidden="true"></span>
+    </div>
+-->
+    <div class="sp-loading-indicator la-sm center">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+</div>
+
+<div id="gallery-container">
+  <div class="photo-box" ng-repeat="photo in c.data.gallery">
+    <img class="photo-small" ng-src="{{ photo.url }}" ng-if="photo.url">
+    <div class="caption" ng-if="photo.url">
+      Submitted by: {{ photo.submitted_by }}
+    </div>
+    <div ng-if="photo.label">
+      {{ photo.label }}
+    </div>
+  </div>
+</div>
+]]></template>
+    </sp_widget>
+</record_update>

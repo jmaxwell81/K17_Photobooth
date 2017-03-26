@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <client_script><![CDATA[function($scope, spUtil) {
+  var c = this;
+	
+		spUtil.recordWatch($scope, "x_snc_k17_photo_booth", "", function() {
+		c.server.update();
+	});
+}]]></client_script>
+        <controller_as>c</controller_as>
+        <css>#container {
+  height: 900px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-large {
+  font-size: 48px; 
+}
+
+.text-photo-subtext {
+  font-size: 36px; 
+}
+
+.photo-container-large {
+  margin: auto;
+  width: 100%; 
+  padding: 60px 90px 60px 90px;
+  background: #FFF;
+  background: url(photobooth-bg.png) no-repeat center;
+  /* background-size: cover; */
+  border-radius: 5px;
+}
+
+.photo {
+  max-height:100%; 
+  max-width:100%;
+
+}
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>wof-mostrecent</id>
+        <internal>false</internal>
+        <link/>
+        <name>K17 - Wall of Fame - Most Recent</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+	data.mostRecent = new x_snc_k17.K17WallOfFame().mostRecentPhoto(1, true);
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>jc</sys_created_by>
+        <sys_created_on>2017-03-22 20:56:51</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_id>46bb7cafdb61fa0018f0de01ce96199f</sys_id>
+        <sys_mod_count>68</sys_mod_count>
+        <sys_name>K17 - Wall of Fame - Most Recent</sys_name>
+        <sys_package display_value="K17" source="x_snc_k17">de9b26b6db783e00d1befa56bf9619c2</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="K17">de9b26b6db783e00d1befa56bf9619c2</sys_scope>
+        <sys_update_name>sp_widget_46bb7cafdb61fa0018f0de01ce96199f</sys_update_name>
+        <sys_updated_by>jc</sys_updated_by>
+        <sys_updated_on>2017-03-26 00:58:37</sys_updated_on>
+        <template><![CDATA[<div>
+  <div id="container">
+    <div class="text-center text-large">
+      most recent
+    </div>
+    <div class="photo-container-large">
+      <img class="photo" ng-src="{{c.data.mostRecent[0].url}}"/>
+    </div>
+    <div class="text-center text-photo-subtext">
+      Submitted by: {{ c.data.mostRecent[0].submitted_by }}
+    </div>
+  </div>
+</div>]]></template>
+    </sp_widget>
+</record_update>

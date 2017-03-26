@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <client_script><![CDATA[function($scope, $http, spUtil) {
+	var c = this;
+
+	c.success = false;
+
+	var instanceURL = "https://" + c.data.instance + ".service-now.com/"
+	var apiURL = "api/now/table/x_snc_k17_photo_share";
+
+	c.sendMail = function() {
+		var payload = {
+			photo : c.currentId,
+			email : c.currentEmail
+		};
+
+		$http.post(instanceURL + apiURL, payload).success(function(r) {
+			console.log("Inserted!")
+			c.success = true;
+		})
+	}
+
+	c.reset = function() {
+		c.currentEmail = '';
+		c.currentId = '';
+		c.success = false;
+	}
+
+	spUtil.recordWatch($scope, "x_snc_k17_photo_booth", "", function() {
+		c.server.update();
+	});
+}]]></client_script>
+        <controller_as>c</controller_as>
+        <css>#container {
+  height: 900px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-large {
+  font-size: 48px; 
+}
+
+.text-photo-subtext {
+  font-size: 36px; 
+}
+
+.photo-container-large {
+  margin: auto;
+  text-align: center;
+  /* width: 100%; */
+  /* padding: 30px 60px 30px 60px; */
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 5px;
+  padding-bottom: 5px;
+  vertical-align: top;
+}
+
+.photo {
+  max-height:170px; 
+  max-width:100%;
+}
+
+.photo-details {
+  width: 100%; 
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+.submitted-by {
+  vertical-align: top;
+  height: 70px;
+}
+
+.submitted-by {
+  border-bottom: 0px;
+  border-left: 0px;
+  border-top: 0px;
+  border-right: 1px;
+  border-style: solid; 
+  border-color: rgba(64, 64, 64, 0.23);
+  display: inline-block;
+  width: 50%;
+  height: 30px;
+}
+
+.email-me {
+  font-size: 24px;
+  display: inline-block;
+  width: 40%;
+}
+
+
+.success {
+  color: #5CB85C; 
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>wof-mostrecentfeed</id>
+        <internal>false</internal>
+        <link/>
+        <name>K17 - Wall of Fame - Most Recent Feed</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+	data.instance = gs.getProperty('instance_name');
+	data.mostRecentPhotos = new x_snc_k17.K17WallOfFame().mostRecentPhoto(5, false);
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>jc</sys_created_by>
+        <sys_created_on>2017-03-25 22:16:51</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_id>48ea2ce8dbf93e0018f0de01ce9619bf</sys_id>
+        <sys_mod_count>55</sys_mod_count>
+        <sys_name>K17 - Wall of Fame - Most Recent Feed</sys_name>
+        <sys_package display_value="K17" source="x_snc_k17">de9b26b6db783e00d1befa56bf9619c2</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="K17">de9b26b6db783e00d1befa56bf9619c2</sys_scope>
+        <sys_update_name>sp_widget_48ea2ce8dbf93e0018f0de01ce9619bf</sys_update_name>
+        <sys_updated_by>jc</sys_updated_by>
+        <sys_updated_on>2017-03-26 01:03:21</sys_updated_on>
+        <template><![CDATA[<div id="container">
+  <div class="text-center text-large">
+    feed
+  </div>
+
+  <div ng-repeat="photo in c.data.mostRecentPhotos">
+    <div class="photo-container-large">
+      <img class="photo" ng-src="{{photo.url}}"/>
+      
+      <div class="photo-details">
+        <div class="detail-box submitted-by">
+          <div>
+            Submitted by:
+          </div>
+          <div>
+            {{ photo.submitted_by }}
+          </div>
+        </div>
+        <div class="detail-box email-me">
+          <a href="javascript:void(0);" data-toggle="modal" data-target="#emailModal">
+            <div ng-click="c.currentId = photo.sys_id">
+              <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
+            </div>  
+          </a>
+        </div>
+      </div>
+    </div>
+
+
+
+    <!--
+<div class="text-center text-photo-subtext">
+Submitted by: {{ photo.submitted_by }}
+</div>
+-->
+  </div>
+
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="emailModal" tabindex="-1" role="dialog" aria-labelledby="emailModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Email photo</h4>
+      </div>
+      <div class="modal-body">
+        Give us your email and we'll email you this photo!
+        <br>
+        <div class="input-group">
+          <input type="text" class="form-control" placeholder="youremail@myemail.com" ng-model="c.currentEmail">
+          <span class="input-group-btn">
+            <button class="btn btn-default" type="button" ng-click="c.sendMail()" ng-disabled="!c.currentEmail">Send it!</button>
+          </span>
+        </div>
+        <br>
+        <div class="success" ng-show="c.success">
+          You're all set! Chek your inbox shortly!
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" ng-click="c.reset()" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+]]></template>
+    </sp_widget>
+</record_update>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_rest_message">
+    <sys_rest_message action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <authentication_type>oauth2</authentication_type>
+        <basic_auth_password/>
+        <basic_auth_profile/>
+        <basic_auth_user/>
+        <description/>
+        <name>twitter</name>
+        <oauth2_profile display_value="twitter default_profile">63e0f73adbf476407fb3f8ecbf9619cf</oauth2_profile>
+        <protocol_name/>
+        <rest_endpoint>https://upload.twitter.com/1.1/media/upload.json</rest_endpoint>
+        <sys_class_name>sys_rest_message</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2017-02-11 16:28:14</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_id>02180f7edbb476407fb3f8ecbf961909</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name>twitter</sys_name>
+        <sys_package display_value="K17" source="x_snc_k17">de9b26b6db783e00d1befa56bf9619c2</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="K17">de9b26b6db783e00d1befa56bf9619c2</sys_scope>
+        <sys_update_name>sys_rest_message_02180f7edbb476407fb3f8ecbf961909</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2017-02-11 21:27:21</sys_updated_on>
+        <use_basic_auth>false</use_basic_auth>
+        <use_mutual_auth>false</use_mutual_auth>
+    </sys_rest_message>
+</record_update>

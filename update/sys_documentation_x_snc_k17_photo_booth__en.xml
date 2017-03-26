@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update>
+    <sys_documentation element="" label="Photo Booth" language="en" table="x_snc_k17_photo_booth">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element/>
+            <help/>
+            <hint/>
+            <label>Photo Booth</label>
+            <language>en</language>
+            <name>x_snc_k17_photo_booth</name>
+            <plural>Photo Booths</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2017-02-11 14:22:52</sys_created_on>
+            <sys_customer_update>false</sys_customer_update>
+            <sys_id>5b9be6b6db783e00d1befa56bf961976</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>Photo Booth</sys_name>
+            <sys_package display_value="K17" source="x_snc_k17">de9b26b6db783e00d1befa56bf9619c2</sys_package>
+            <sys_policy/>
+            <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+            <sys_scope display_value="K17">de9b26b6db783e00d1befa56bf9619c2</sys_scope>
+            <sys_update_name>sys_documentation_x_snc_k17_photo_booth__en</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2017-02-11 14:22:52</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>

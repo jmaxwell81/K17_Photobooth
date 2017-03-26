@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_snc_k17.K17WallOfFame</api_name>
+        <client_callable>false</client_callable>
+        <description/>
+        <name>K17WallOfFame</name>
+        <script><![CDATA[var K17WallOfFame = Class.create();
+K17WallOfFame.prototype = {
+	initialize: function() {
+		this.instance = "https://" + gs.getProperty('instance_name') + ".service-now.com/";
+		this.attachmentURL = "sys_attachment.do?sysparm_referring_url=tear_off&view=true&sys_id=";
+	},
+
+	mostRecentPhoto : function(limit, getMostRecent) {
+		if (!limit) limit = 1; //If no limit is set, just pull the most recent
+		
+		var recentPhotos = [];
+
+		var pb = new GlideRecord('x_snc_k17_photo_booth');
+		pb.setLimit(limit);
+		pb.orderByDesc('sys_created_on');
+		
+		if (!getMostRecent)
+			pb.chooseWindow(1, limit + 1);
+		
+		pb.query();
+
+		while (pb.next()){
+			var CurrentPhoto = {
+				url : this._getImageAttachment(pb.sys_id),
+				submitted_by : pb.first_name + ' ' + pb.last_name + '',
+				sys_id : pb.sys_id + ''
+			};
+		
+			recentPhotos.push(CurrentPhoto);
+		}
+
+		return recentPhotos;
+	},
+
+	//Generates a random set of photo URLs given a sample size. 
+	gallery : function(sampleSize) {
+		if (!sampleSize) sampleSize = 12;
+
+		//var origSampleSize = sampleSize;
+
+		var gallery = [], usedPointers = [];
+		var ids = "";
+
+		var p = new GlideRecord('x_snc_k17_photo_booth');
+		p.query();
+		var totalRows = p.getRowCount();
+
+		//if (totalRows < sampleSize) sampleSize = totalRows;
+
+		while (gallery.length < sampleSize) {
+			var pointer = Math.floor(Math.random() * sampleSize);
+			if (usedPointers.indexOf(pointer) >= 0) continue;
+			usedPointers.push(pointer);
+
+			p.chooseWindow(pointer, pointer + 1);
+			p.query();
+			if (p.next()){
+				var id = p.getElement('sys_id').toString();  
+
+				if (ids.indexOf(id) < 0) {
+					ids += id + ",";
+					gallery.unshift({
+						url : this._getImageAttachment(p.sys_id),
+						submitted_by : p.first_name + " " + p.last_name + ''
+					});
+				}
+			} else {
+				gallery.push({
+					label : "Standby for more photos!"
+				});
+			}
+		}
+
+
+
+
+
+		return gallery;
+	},
+
+
+	//Returns full attachment url
+	_getImageAttachment : function(id) {
+		var a = new GlideRecord('sys_attachment');
+		a.addQuery('table_sys_id', id);
+		a.addQuery('content_type', 'image/jpeg');
+		a.query();
+
+		if (a.next()) 
+			return this.instance + this.attachmentURL + a.sys_id;
+
+		return 'Oops...';
+
+	},
+
+	type: 'K17WallOfFame'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>jc</sys_created_by>
+        <sys_created_on>2017-03-22 21:51:14</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_id>081445a3dba1fa0018f0de01ce96193f</sys_id>
+        <sys_mod_count>47</sys_mod_count>
+        <sys_name>K17WallOfFame</sys_name>
+        <sys_package display_value="K17" source="x_snc_k17">de9b26b6db783e00d1befa56bf9619c2</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="K17">de9b26b6db783e00d1befa56bf9619c2</sys_scope>
+        <sys_update_name>sys_script_include_081445a3dba1fa0018f0de01ce96193f</sys_update_name>
+        <sys_updated_by>jc</sys_updated_by>
+        <sys_updated_on>2017-03-25 23:01:54</sys_updated_on>
+    </sys_script_include>
+</record_update>

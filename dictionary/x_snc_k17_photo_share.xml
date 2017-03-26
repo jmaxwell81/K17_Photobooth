@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element label="Photo share" max_length="40" name="x_snc_k17_photo_share" type="collection">
+        <element label="Email" max_length="100" name="email" type="string"/>
+        <element label="Photo" max_length="32" name="photo" reference="x_snc_k17_photo_booth" type="reference"/>
+        <index name="index">
+            <element name="photo"/>
+        </index>
+    </element>
+</database>
