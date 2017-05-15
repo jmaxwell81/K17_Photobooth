@@ -10,39 +10,39 @@
         <hint/>
         <homepage/>
         <image/>
-        <link_type>LIST</link_type>
+        <link_type>DIRECT</link_type>
         <map_page/>
-        <mobile_title>Photo shares</mobile_title>
+        <mobile_title>Recent photos</mobile_title>
         <mobile_view_name>Mobile</mobile_view_name>
-        <name>x_snc_k17_photo_share</name>
-        <order>200</order>
+        <name/>
+        <order>2</order>
         <override_menu_roles>false</override_menu_roles>
-        <query/>
+        <query>/photobooth?id=wall_of_fame&amp;sysparm_stack=no</query>
         <report/>
-        <roles>x_snc_k17.user</roles>
+        <roles/>
         <survey/>
         <survey_overwrite>true</survey_overwrite>
         <sys_class_name>sys_app_module</sys_class_name>
-        <sys_created_by>jc</sys_created_by>
-        <sys_created_on>2017-03-26 00:23:11</sys_created_on>
+        <sys_created_by>josh.bray</sys_created_by>
+        <sys_created_on>2017-05-08 14:36:14</sys_created_on>
         <sys_customer_update>true</sys_customer_update>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
-        <sys_id>e2c70d68db3d3e0018f0de01ce961935</sys_id>
+        <sys_id>e967a922dbeef20018f0de01ce96199e</sys_id>
         <sys_mod_count>1</sys_mod_count>
-        <sys_name>Photo shares</sys_name>
+        <sys_name>Wall of Fame ➚</sys_name>
         <sys_overrides/>
         <sys_package display_value="K17 Photobooth" source="x_snc_k17">de9b26b6db783e00d1befa56bf9619c2</sys_package>
         <sys_policy/>
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="K17 Photobooth">de9b26b6db783e00d1befa56bf9619c2</sys_scope>
-        <sys_update_name>sys_app_module_e2c70d68db3d3e0018f0de01ce961935</sys_update_name>
+        <sys_update_name>sys_app_module_e967a922dbeef20018f0de01ce96199e</sys_update_name>
         <sys_updated_by>josh.bray</sys_updated_by>
-        <sys_updated_on>2017-05-08 14:36:30</sys_updated_on>
+        <sys_updated_on>2017-05-08 14:37:38</sys_updated_on>
         <timeline_page/>
-        <title>Photo shares</title>
+        <title>Wall of Fame ➚</title>
         <uncancelable>false</uncancelable>
         <view_name/>
-        <window_name/>
+        <window_name>photobooth_wall_of_fame</window_name>
     </sys_app_module>
 </record_update>

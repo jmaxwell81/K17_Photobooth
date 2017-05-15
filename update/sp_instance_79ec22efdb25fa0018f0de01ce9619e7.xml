@@ -17,21 +17,21 @@
         <sys_created_on>2017-03-23 05:11:02</sys_created_on>
         <sys_customer_update>true</sys_customer_update>
         <sys_id>79ec22efdb25fa0018f0de01ce9619e7</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_mod_count>3</sys_mod_count>
         <sys_name/>
         <sys_package display_value="K17 Photobooth" source="x_snc_k17">de9b26b6db783e00d1befa56bf9619c2</sys_package>
         <sys_policy/>
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="K17 Photobooth">de9b26b6db783e00d1befa56bf9619c2</sys_scope>
         <sys_update_name>sp_instance_79ec22efdb25fa0018f0de01ce9619e7</sys_update_name>
-        <sys_updated_by>jc</sys_updated_by>
-        <sys_updated_on>2017-03-25 21:47:03</sys_updated_on>
+        <sys_updated_by>josh.bray</sys_updated_by>
+        <sys_updated_on>2017-05-08 17:25:31</sys_updated_on>
         <title/>
         <url/>
         <widget_parameters><![CDATA[{
 	"number_of_photos": {
-		"value": 16,
-		"displayValue": "16"
+		"value": 12,
+		"displayValue": "12"
 	}
 }]]></widget_parameters>
     </sp_instance>

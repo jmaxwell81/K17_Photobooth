@@ -11,7 +11,7 @@
 		c.server.update().then(function(){
 			$scope.loading = false;
 		});
-	}, 120000);
+	}, 300000);
 	
 }]]></client_script>
         <controller_as>c</controller_as>
@@ -107,15 +107,15 @@
         <sys_created_on>2017-03-23 05:10:38</sys_created_on>
         <sys_customer_update>true</sys_customer_update>
         <sys_id>c4dc6a6fdb25fa0018f0de01ce96199a</sys_id>
-        <sys_mod_count>66</sys_mod_count>
+        <sys_mod_count>69</sys_mod_count>
         <sys_name>K17 - Wall of Fame - Gallery</sys_name>
         <sys_package display_value="K17 Photobooth" source="x_snc_k17">de9b26b6db783e00d1befa56bf9619c2</sys_package>
         <sys_policy/>
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="K17 Photobooth">de9b26b6db783e00d1befa56bf9619c2</sys_scope>
         <sys_update_name>sp_widget_c4dc6a6fdb25fa0018f0de01ce96199a</sys_update_name>
-        <sys_updated_by>jc</sys_updated_by>
-        <sys_updated_on>2017-03-26 01:06:29</sys_updated_on>
+        <sys_updated_by>josh.bray</sys_updated_by>
+        <sys_updated_on>2017-05-09 14:25:16</sys_updated_on>
         <template><![CDATA[<div ng-show="loading" id="hideAll">
   <div id="loading-text">
     <div>
@@ -137,9 +137,11 @@
 <div id="gallery-container">
   <div class="photo-box" ng-repeat="photo in c.data.gallery">
     <img class="photo-small" ng-src="{{ photo.url }}" ng-if="photo.url">
-    <div class="caption" ng-if="photo.url">
+    <!--
+    <div class="caption" ng-show="false" ng-if="photo.url">
       Submitted by: {{ photo.submitted_by }}
     </div>
+-->
     <div ng-if="photo.label">
       {{ photo.label }}
     </div>

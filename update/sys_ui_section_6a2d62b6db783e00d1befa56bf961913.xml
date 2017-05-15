@@ -4,154 +4,168 @@
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>number</element>
             <position>0</position>
-            <sys_created_by>josh.bray@snc</sys_created_by>
-            <sys_created_on>2017-04-03 19:52:33</sys_created_on>
-            <sys_id>0620e617db35b20018f0de01ce961938</sys_id>
+            <sys_created_by>josh.bray</sys_created_by>
+            <sys_created_on>2017-04-25 17:33:24</sys_created_on>
+            <sys_id>0243d7dedbda7e00a7dbf1351d9619f0</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_snc_k17_photo_booth" sys_domain="global" view="Default view">6a2d62b6db783e00d1befa56bf961913</sys_ui_section>
-            <sys_updated_by>josh.bray@snc</sys_updated_by>
-            <sys_updated_on>2017-04-03 19:52:33</sys_updated_on>
+            <sys_updated_by>josh.bray</sys_updated_by>
+            <sys_updated_on>2017-04-25 17:33:24</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>active</element>
             <position>1</position>
-            <sys_created_by>josh.bray@snc</sys_created_by>
-            <sys_created_on>2017-04-03 19:52:33</sys_created_on>
-            <sys_id>8620e617db35b20018f0de01ce961938</sys_id>
+            <sys_created_by>josh.bray</sys_created_by>
+            <sys_created_on>2017-04-25 17:33:24</sys_created_on>
+            <sys_id>0a43d7dedbda7e00a7dbf1351d9619f0</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_snc_k17_photo_booth" sys_domain="global" view="Default view">6a2d62b6db783e00d1befa56bf961913</sys_ui_section>
-            <sys_updated_by>josh.bray@snc</sys_updated_by>
-            <sys_updated_on>2017-04-03 19:52:33</sys_updated_on>
+            <sys_updated_by>josh.bray</sys_updated_by>
+            <sys_updated_on>2017-04-25 17:33:24</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>.split</element>
             <position>2</position>
-            <sys_created_by>josh.bray@snc</sys_created_by>
-            <sys_created_on>2017-04-03 19:52:33</sys_created_on>
-            <sys_id>0a20e617db35b20018f0de01ce961938</sys_id>
+            <sys_created_by>josh.bray</sys_created_by>
+            <sys_created_on>2017-04-25 17:33:24</sys_created_on>
+            <sys_id>8a43d7dedbda7e00a7dbf1351d9619f0</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_snc_k17_photo_booth" sys_domain="global" view="Default view">6a2d62b6db783e00d1befa56bf961913</sys_ui_section>
-            <sys_updated_by>josh.bray@snc</sys_updated_by>
-            <sys_updated_on>2017-04-03 19:52:33</sys_updated_on>
+            <sys_updated_by>josh.bray</sys_updated_by>
+            <sys_updated_on>2017-04-25 17:33:24</sys_updated_on>
             <sys_user/>
             <type>.split</type>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>state</element>
             <position>3</position>
-            <sys_created_by>josh.bray@snc</sys_created_by>
-            <sys_created_on>2017-04-03 19:52:33</sys_created_on>
-            <sys_id>8a20e617db35b20018f0de01ce961938</sys_id>
+            <sys_created_by>josh.bray</sys_created_by>
+            <sys_created_on>2017-04-25 17:33:24</sys_created_on>
+            <sys_id>0e43d7dedbda7e00a7dbf1351d9619f0</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_snc_k17_photo_booth" sys_domain="global" view="Default view">6a2d62b6db783e00d1befa56bf961913</sys_ui_section>
-            <sys_updated_by>josh.bray@snc</sys_updated_by>
-            <sys_updated_on>2017-04-03 19:52:33</sys_updated_on>
+            <sys_updated_by>josh.bray</sys_updated_by>
+            <sys_updated_on>2017-04-25 17:33:24</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>.end_split</element>
             <position>4</position>
-            <sys_created_by>josh.bray@snc</sys_created_by>
-            <sys_created_on>2017-04-03 19:52:33</sys_created_on>
-            <sys_id>0e20e617db35b20018f0de01ce961938</sys_id>
+            <sys_created_by>josh.bray</sys_created_by>
+            <sys_created_on>2017-04-25 17:33:24</sys_created_on>
+            <sys_id>8e43d7dedbda7e00a7dbf1351d9619f0</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_snc_k17_photo_booth" sys_domain="global" view="Default view">6a2d62b6db783e00d1befa56bf961913</sys_ui_section>
-            <sys_updated_by>josh.bray@snc</sys_updated_by>
-            <sys_updated_on>2017-04-03 19:52:33</sys_updated_on>
+            <sys_updated_by>josh.bray</sys_updated_by>
+            <sys_updated_on>2017-04-25 17:33:24</sys_updated_on>
             <sys_user/>
             <type>.end_split</type>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>first_name</element>
             <position>5</position>
-            <sys_created_by>josh.bray@snc</sys_created_by>
-            <sys_created_on>2017-04-03 19:52:33</sys_created_on>
-            <sys_id>8e20e617db35b20018f0de01ce961938</sys_id>
+            <sys_created_by>josh.bray</sys_created_by>
+            <sys_created_on>2017-04-25 17:33:24</sys_created_on>
+            <sys_id>0243d7dedbda7e00a7dbf1351d9619f1</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_snc_k17_photo_booth" sys_domain="global" view="Default view">6a2d62b6db783e00d1befa56bf961913</sys_ui_section>
-            <sys_updated_by>josh.bray@snc</sys_updated_by>
-            <sys_updated_on>2017-04-03 19:52:33</sys_updated_on>
+            <sys_updated_by>josh.bray</sys_updated_by>
+            <sys_updated_on>2017-04-25 17:33:24</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>last_name</element>
             <position>6</position>
-            <sys_created_by>josh.bray@snc</sys_created_by>
-            <sys_created_on>2017-04-03 19:52:33</sys_created_on>
-            <sys_id>0220e617db35b20018f0de01ce961939</sys_id>
+            <sys_created_by>josh.bray</sys_created_by>
+            <sys_created_on>2017-04-25 17:33:24</sys_created_on>
+            <sys_id>8243d7dedbda7e00a7dbf1351d9619f1</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_snc_k17_photo_booth" sys_domain="global" view="Default view">6a2d62b6db783e00d1befa56bf961913</sys_ui_section>
-            <sys_updated_by>josh.bray@snc</sys_updated_by>
-            <sys_updated_on>2017-04-03 19:52:33</sys_updated_on>
+            <sys_updated_by>josh.bray</sys_updated_by>
+            <sys_updated_on>2017-04-25 17:33:24</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>email</element>
             <position>7</position>
-            <sys_created_by>josh.bray@snc</sys_created_by>
-            <sys_created_on>2017-04-03 19:52:33</sys_created_on>
-            <sys_id>8220e617db35b20018f0de01ce961939</sys_id>
+            <sys_created_by>josh.bray</sys_created_by>
+            <sys_created_on>2017-04-25 17:33:24</sys_created_on>
+            <sys_id>0643d7dedbda7e00a7dbf1351d9619f1</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_snc_k17_photo_booth" sys_domain="global" view="Default view">6a2d62b6db783e00d1befa56bf961913</sys_ui_section>
-            <sys_updated_by>josh.bray@snc</sys_updated_by>
-            <sys_updated_on>2017-04-03 19:52:33</sys_updated_on>
+            <sys_updated_by>josh.bray</sys_updated_by>
+            <sys_updated_on>2017-04-25 17:33:24</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>u_badge_id</element>
+            <position>8</position>
+            <sys_created_by>josh.bray</sys_created_by>
+            <sys_created_on>2017-04-25 17:33:24</sys_created_on>
+            <sys_id>8643d7dedbda7e00a7dbf1351d9619f1</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_snc_k17_photo_booth" sys_domain="global" view="Default view">6a2d62b6db783e00d1befa56bf961913</sys_ui_section>
+            <sys_updated_by>josh.bray</sys_updated_by>
+            <sys_updated_on>2017-04-25 17:33:24</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>company</element>
-            <position>8</position>
-            <sys_created_by>josh.bray@snc</sys_created_by>
-            <sys_created_on>2017-04-03 19:52:33</sys_created_on>
-            <sys_id>0620e617db35b20018f0de01ce961939</sys_id>
+            <position>9</position>
+            <sys_created_by>josh.bray</sys_created_by>
+            <sys_created_on>2017-04-25 17:33:24</sys_created_on>
+            <sys_id>0a43d7dedbda7e00a7dbf1351d9619f1</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_snc_k17_photo_booth" sys_domain="global" view="Default view">6a2d62b6db783e00d1befa56bf961913</sys_ui_section>
-            <sys_updated_by>josh.bray@snc</sys_updated_by>
-            <sys_updated_on>2017-04-03 19:52:33</sys_updated_on>
+            <sys_updated_by>josh.bray</sys_updated_by>
+            <sys_updated_on>2017-04-25 17:33:24</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>u_twitter_url</element>
-            <position>9</position>
-            <sys_created_by>josh.bray@snc</sys_created_by>
-            <sys_created_on>2017-04-03 19:52:33</sys_created_on>
-            <sys_id>8620e617db35b20018f0de01ce961939</sys_id>
+            <position>10</position>
+            <sys_created_by>josh.bray</sys_created_by>
+            <sys_created_on>2017-04-25 17:33:24</sys_created_on>
+            <sys_id>8a43d7dedbda7e00a7dbf1351d9619f1</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_snc_k17_photo_booth" sys_domain="global" view="Default view">6a2d62b6db783e00d1befa56bf961913</sys_ui_section>
-            <sys_updated_by>josh.bray@snc</sys_updated_by>
-            <sys_updated_on>2017-04-03 19:52:33</sys_updated_on>
+            <sys_updated_by>josh.bray</sys_updated_by>
+            <sys_updated_on>2017-04-25 17:33:24</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>photo</element>
-            <position>10</position>
-            <sys_created_by>josh.bray@snc</sys_created_by>
-            <sys_created_on>2017-04-03 19:52:33</sys_created_on>
-            <sys_id>0a20e617db35b20018f0de01ce961939</sys_id>
+            <position>11</position>
+            <sys_created_by>josh.bray</sys_created_by>
+            <sys_created_on>2017-04-25 17:33:24</sys_created_on>
+            <sys_id>0e43d7dedbda7e00a7dbf1351d9619f1</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_snc_k17_photo_booth" sys_domain="global" view="Default view">6a2d62b6db783e00d1befa56bf961913</sys_ui_section>
-            <sys_updated_by>josh.bray@snc</sys_updated_by>
-            <sys_updated_on>2017-04-03 19:52:33</sys_updated_on>
+            <sys_updated_by>josh.bray</sys_updated_by>
+            <sys_updated_on>2017-04-25 17:33:24</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>

@@ -1,20 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <record_update table="sp_widget">
     <sp_widget action="INSERT_OR_UPDATE">
-        <client_script><![CDATA[function($scope, spUtil) {
-  var c = this;
-	
-		spUtil.recordWatch($scope, "x_snc_k17_photo_booth", "", function() {
+        <client_script><![CDATA[function($scope, $http, spUtil) {
+	var c = this;
+
+	var instanceURL = "https://" + c.data.instance + ".service-now.com/"
+	var apiURL = "api/now/table/x_snc_k17_photo_share";
+
+	c.sendMail = function() {
+		var payload = {
+			photo : c.currentId,
+			email : c.currentEmail
+		};
+
+		$http.post(instanceURL + apiURL, payload).success(function(r) {
+			console.log("Inserted!")
+			c.success = true;
+		})
+	}
+
+	c.reset = function() {
+		c.currentEmail = '';
+		c.currentId = '';
+		c.success = false;
+		c.currentImageUrl = '';
+	}
+
+
+	spUtil.recordWatch($scope, "x_snc_k17_photo_booth", "", function() {
 		c.server.update();
 	});
 }]]></client_script>
         <controller_as>c</controller_as>
         <css>#container {
-  height: 900px;
+  /* height: 900px; */
 }
 
 .text-center {
   text-align: center;
+}
+
+.spacer {
+  height: 20px; 
 }
 
 .text-large {
@@ -25,6 +52,20 @@
   font-size: 36px; 
 }
 
+.photo-caption {
+  font-size: large;
+  color: #FFF;
+  width: 40%;
+  padding: 5px;
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgba(0, 0, 0, 0.61);
+  border-radius: 5px;
+  display: inline-block;
+
+}
+
 .photo-container-large {
   margin: auto;
   width: 100%; 
@@ -33,12 +74,59 @@
   background: url(photobooth-bg.png) no-repeat center;
   /* background-size: cover; */
   border-radius: 5px;
+  text-align: center;
 }
 
 .photo {
-  max-height:100%; 
-  max-width:100%;
+  /*max-height:100%; */
+  width:60%;
+  /*height: 600px;*/
 
+}
+
+.email-me {
+  font-size: 24px;
+  display: inline-block;
+  width: 40%;
+}
+
+@media only screen and (max-width: 800px) {
+  .photo {
+    /*max-height:100%; */
+    width:90%;
+    /*height: 600px;*/
+
+  }
+  .photo-container-large {
+    margin: auto;
+    width: 100%; 
+    padding: 0px;
+    background: #FFF;
+    background: url(photobooth-bg.png) no-repeat center;
+    border-radius: 5px;
+    text-align: center;
+  }
+  .photo-caption {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .photo {
+    /*max-height:100%; */
+    width:100%;
+    /*height: 600px;*/
+
+  }
+  .photo-container-large {
+    margin: auto;
+
+    width: 100%; 
+    padding: 0px;
+    background: #FFF;
+    border-radius: 5px;
+    text-align: center;
+  }
 }
 </css>
         <data_table>sp_instance</data_table>
@@ -55,7 +143,9 @@
         <public>false</public>
         <roles/>
         <script><![CDATA[(function() {
+	data.instance = gs.getProperty('instance_name');
 	data.mostRecent = new x_snc_k17.K17WallOfFame().mostRecentPhoto(1, true);
+
 })();]]></script>
         <servicenow>false</servicenow>
         <sys_class_name>sp_widget</sys_class_name>
@@ -63,25 +153,66 @@
         <sys_created_on>2017-03-22 20:56:51</sys_created_on>
         <sys_customer_update>true</sys_customer_update>
         <sys_id>46bb7cafdb61fa0018f0de01ce96199f</sys_id>
-        <sys_mod_count>68</sys_mod_count>
+        <sys_mod_count>99</sys_mod_count>
         <sys_name>K17 - Wall of Fame - Most Recent</sys_name>
         <sys_package display_value="K17 Photobooth" source="x_snc_k17">de9b26b6db783e00d1befa56bf9619c2</sys_package>
         <sys_policy/>
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="K17 Photobooth">de9b26b6db783e00d1befa56bf9619c2</sys_scope>
         <sys_update_name>sp_widget_46bb7cafdb61fa0018f0de01ce96199f</sys_update_name>
-        <sys_updated_by>jc</sys_updated_by>
-        <sys_updated_on>2017-03-26 00:58:37</sys_updated_on>
+        <sys_updated_by>josh.bray</sys_updated_by>
+        <sys_updated_on>2017-05-08 17:12:41</sys_updated_on>
         <template><![CDATA[<div>
   <div id="container">
-    <div class="text-center text-large">
-      most recent
+    <div class="text-center text-large spacer">
     </div>
     <div class="photo-container-large">
       <img class="photo" ng-src="{{c.data.mostRecent[0].url}}"/>
+      <!--
+      <div class="photo-caption">
+        Submitted by: {{ c.data.mostRecent[0].submitted_by }}
+        <div class="detail-box email-me">
+          <a href="javascript:void(0);" data-toggle="modal" data-target="#emailModalRecent">
+            <div ng-click="c.currentId = c.data.mostRecent[0].sys_id">
+              Email this photo
+<span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
+            </div>  
+          </a>
+        </div>
+      </div>
+			-->
     </div>
     <div class="text-center text-photo-subtext">
-      Submitted by: {{ c.data.mostRecent[0].submitted_by }}
+    </div>
+  </div>
+</div>
+
+
+
+<div class="modal fade" id="emailModalRecent" tabindex="-1" role="dialog" aria-labelledby="emailModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Email photo</h4>
+      </div>
+      <div class="modal-body">
+        Give us your email and we'll email you this photo!
+        <br>
+        <div class="input-group">
+          <input type="text" class="form-control" placeholder="youremail@myemail.com" ng-model="c.currentEmail">
+          <span class="input-group-btn">
+            <button class="btn btn-default" type="button" ng-click="c.sendMail()" ng-disabled="!c.currentEmail">Send it!</button>
+          </span>
+        </div>
+        <br>
+        <div class="success" ng-show="c.success">
+          You're all set! Chek your inbox shortly!
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" ng-click="c.reset()" data-dismiss="modal">Close</button>
+      </div>
     </div>
   </div>
 </div>]]></template>
